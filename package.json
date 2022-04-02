@@ -26,6 +26,10 @@
     "sass": "^1.49.10"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "flatpickr": "^4.6.11",
+    "loda": "^0.1.3",
+    "lodash.debounce": "^4.0.8",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5"
   }
 }
