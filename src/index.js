@@ -29,7 +29,7 @@ refs.inputBox.addEventListener('input', debounce(onInput, 300));
 function onInput(e) {
   const country = e.target.value.trim();
 
-  if (country.length == 0) return;
+  if (country.length === 0) return;
 
   fetchCountries(country, filter)
     .then(countries => {
@@ -40,14 +40,16 @@ function onInput(e) {
         return;
       }
 
-      if (countries.length == 1) {
+      if (countries.length === 1) {
         refs.countryList.innerHTML = '';
         showCard(refs.countryInfo, countries[0]);
         return;
       }
 
-      refs.countryInfo.innerHTML = '';
-      showCards(refs.countryList, countries);
+      if (countries.length >= 2 && countries.length <= 10) {
+        refs.countryInfo.innerHTML = '';
+        showCards(refs.countryList, countries);
+      }
     })
     .catch(e => {
       console.log(e);

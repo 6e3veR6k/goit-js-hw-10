@@ -7,9 +7,6 @@ export function showCard(divLink, country) {
     languages,
   } = country;
 
-  console.log(country);
-  console.log({ name, capital, population, flag, languages });
-
   divLink.innerHTML = createCountryItem({ name, capital, population, flag, languages });
 }
 
@@ -58,12 +55,6 @@ function insertItemsToList(ulLink, listItems) {
 }
 
 function createCountryItem({ name, capital, population, flag, languages }) {
-  // capital: ['Bandar Seri Begawan']
-  // flags: {png: 'https://flagcdn.com/w320/bn.png', svg: 'https://flagcdn.com/bn.svg'}
-  // languages: {msa: 'Malay'}
-  // name: {common: 'Brunei', official: 'Nation of Brunei, Abode of Peace', nativeName: {…}}
-  // population: 437483
-
   return `
         <div class="country-info__header">
         <img src="${flag}" alt="${name} flag">
